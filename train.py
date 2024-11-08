@@ -203,11 +203,11 @@ def train(config):
         ],
     )
 
-    # trainer.fit(
-    #     model_module,
-    #     data_module,
-    #     ckpt_path=config.get("resume_from_checkpoint_path", None),
-    # )
+    trainer.fit(
+        model_module,
+        data_module,
+        ckpt_path=config.get("resume_from_checkpoint_path", None),
+    )
 
 
 if __name__ == "__main__":
