@@ -140,6 +140,7 @@ def train(config):
         `config` (dict): A dictionary containing configuration settings for training.
     """
     pl.seed_everything(config.get("seed", 42), workers=True)
+    print("config:", config.dataset_paths)
 
     model_module = NougatModelPLModule(config)
     data_module = NougatDataPLModule(config)
@@ -158,7 +159,8 @@ def train(config):
             )
     data_module.train_datasets = datasets["train"]
     data_module.val_datasets = datasets["validation"]
-
+    # print("data_module.train_datasets:", data_module.train_datasets)
+    # print("data_module.val_datasets:", data_module.val_datasets)
     lr_callback = LearningRateMonitor(logging_interval="step")
 
     checkpoint_callback = ModelCheckpoint(
@@ -201,11 +203,11 @@ def train(config):
         ],
     )
 
-    trainer.fit(
-        model_module,
-        data_module,
-        ckpt_path=config.get("resume_from_checkpoint_path", None),
-    )
+    # trainer.fit(
+    #     model_module,
+    #     data_module,
+    #     ckpt_path=config.get("resume_from_checkpoint_path", None),
+    # )
 
 
 if __name__ == "__main__":

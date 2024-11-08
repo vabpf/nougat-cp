@@ -1,8 +1,8 @@
 resume_from_checkpoint_path: null
 result_path: "result"
 model_path: null
-dataset_paths: ["D:/FPT/math-ocr/nougat/test/data/train.jsonl"]
-tokenizer: "D:/Models/torch/hub/nougat-0.1.0-small/tokenizer.json"
+dataset_paths: ["/test/data/train.jsonl"]
+tokenizer: "nougat-0.1.0-small/tokenizer.json"
 exp_name: "nougat"
 train_batch_sizes: [1]
 num_workers: 8

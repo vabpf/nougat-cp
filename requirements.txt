@@ -13,10 +13,9 @@ pypdf
 pypdfium2
 fastapi
 uvicorn
-multipart
+python-multipart
 pytesseract
 bs4
-sklearn
 Pebble
 pylatexenc
 fuzzysearch

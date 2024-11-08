@@ -229,7 +229,11 @@ class NougatDataset(Dataset):
         self.dataset = SciPDFDataset(
             dataset_path, split=self.split, template=template, root_name=root_name
         )
+
+        print("dataset:", self.dataset[0]) 
+        # print("encoder:", self.nougat_model.encoder)
         self.dataset_length = len(self.dataset)
+        # print("dataset_length:", self.dataset_length)
 
     def __len__(self) -> int:
         return self.dataset_length
